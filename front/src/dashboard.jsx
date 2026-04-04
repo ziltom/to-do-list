@@ -6,6 +6,9 @@ import { useState, useEffect } from "react";
   const [editandoId, setEditandoId] = useState(null);
   const [textoTemporario, setTextoTemporario] = useState("");
   const [erro, setErro] = useState("");
+  const capacidade=10;
+  const restante = capacidade - lista.length;
+ 
 
   async function mostrarTarefas(){
     const response = await fetch(`http://localhost:3000/tarefas`);
@@ -21,6 +24,12 @@ import { useState, useEffect } from "react";
     if (addTarefa.length > 55) {
       setErro("O texto não pode ter mais de 55 caracteres!");
       return;
+    }
+
+    if (lista.length>=capacidade){
+      setErro("Você atingiu o limite de 10 tarefas")
+      return;
+
     }
 
     try{
@@ -85,6 +94,7 @@ import { useState, useEffect } from "react";
 return (
     <div style={{ padding: "20px", fontFamily: "sans-serif" }}>
       <h1>Minha Lista</h1>
+      <p> Limite de tarefas disponíveis: {restante}</p>
       {erro && <div style={{ color: "red", fontWeight: "bold", marginBottom: "10px" }}>{erro}</div>}
 
       <form onSubmit={criarTarefa}>
