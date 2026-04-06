@@ -78,7 +78,10 @@ function Dashboard() {
   }
 
   async function deletar(id) {
+    
+    
     await fetch(`http://localhost:3000/tarefas/${id}`, {
+      
       method: "DELETE",
     });
     mostrarTarefas();
@@ -137,7 +140,11 @@ function Dashboard() {
                 <div className="task-content">
                   <span className={`task-text ${t.concluida ? 'completed' : ''}`}>
                     {t.texto}
-                    {t.concluida && <span className="timestamp"> ✅ (Finalizado às {t.concluida_em})</span>}
+                    {Boolean(t.concluida) && (
+  <span className="timestamp">
+    ✅ (Finalizado às {t.concluida_em})
+  </span>
+)}
                   </span>
                   
                   <div className="action-buttons">
@@ -151,7 +158,8 @@ function Dashboard() {
                       setEditandoId(t.id);
                       setTextoTemporario(t.texto);
                     }}>Editar</button>
-                    <button className="btn btn-danger" onClick={() => deletar(t.id)}>Excluir</button>
+                    <button className="btn btn-danger" onClick={() => deletar(t.id)}
+                      >Excluir</button>
                   </div>
                 </div>
               )}
