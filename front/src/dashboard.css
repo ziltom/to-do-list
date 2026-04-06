@@ -1,0 +1,196 @@
+/* Container que centraliza tudo na tela */
+.dashboard-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 60px;
+  background-color: #e8f0ec; /* Um creme/amarelo pastel bem suave para o fundo */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+/* O cartão branco principal */
+/* O cartão principal */
+.todo-card {
+  background: #ffffff; /* Um tom pastel de pêssego/creme bem suave (antes era white) */
+  width: 100%;
+  max-width: 650px;
+  padding: 40px;
+  border-radius: 20px; 
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); 
+}
+
+.title {
+  margin-top: 0;
+  color: #5d5c61; /* Cinza suave */
+  text-align: center;
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  text-align: center;
+  color: #888;
+  font-size: 1rem;
+  margin-bottom: 30px;
+}
+
+.subtitle strong {
+  color: #77cbb9; /* Verde pastel para o destaque */
+}
+
+.error-message {
+  background-color: #fff0f0; /* Rosa pastel de fundo */
+  color: #e67e7e; /* Rosa pastel escuro para o texto */
+  padding: 12px;
+  border-radius: 10px;
+  text-align: center;
+  font-weight: 600;
+  margin-bottom: 20px;
+  border: 1px solid #ffe0e0;
+}
+
+/* Formulários de adicionar e editar */
+.add-form, .edit-form {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 25px;
+}
+
+.input-task {
+  flex: 1;
+  padding: 14px 18px;
+  border: 2px solid #eee; /* Borda leve */
+  border-radius: 12px;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.2s;
+  background-color: #fafafa;
+}
+
+.input-task:focus {
+  border-color: #a3cdf1; /* Azul pastel ao focar */
+  background-color: white;
+  box-shadow: 0 0 0 4px rgba(163, 205, 241, 0.2); /* Brilho suave */
+}
+
+.divider {
+  border: 0;
+  height: 2px;
+  background: #f4f4f4;
+  margin: 25px 0;
+}
+
+/* Lista de Tarefas */
+.task-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.task-item {
+  background-color: #f2f7f4; /* Um tom quase gelo/rosado clarinho para as tarefas */
+  border: 1px solid #f0eaeb;
+  border-radius: 15px;
+  padding: 20px;
+  transition: all 0.2s;
+}
+
+.task-item:hover {
+  transform: translateY(-3px); /* Levanta levemente */
+  box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+}
+
+.task-content {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Texto da tarefa */
+.task-text {
+  font-size: 1.1rem;
+  color: #444;
+  word-break: break-word;
+}
+
+.task-text.completed {
+  text-decoration: line-through;
+  color: #bbb; /* Texto riscado bem claro */
+}
+
+.timestamp {
+  font-size: 0.9rem;
+  color: #77cbb9; /* Verde pastel suave */
+  font-weight: 500;
+  margin-left: 5px;
+}
+
+/* Botões */
+.action-buttons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 10px 18px;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 0.95rem;
+}
+
+.btn:active {
+  transform: scale(0.96);
+}
+
+/* Azul pastel */
+.btn-primary { 
+  background-color: #a3cdf1; 
+  color: white; 
+}
+.btn-primary:hover { 
+  background-color: #8ebde6; 
+}
+
+/* Verde pastel */
+.btn-success { 
+  background-color: #77cbb9; 
+  color: white; 
+}
+.btn-success:hover { 
+  background-color: #61bfa9; 
+}
+
+/* Rosa pastel escuro */
+.btn-danger { 
+  background-color: #e67e7e; 
+  color: white; 
+}
+.btn-danger:hover { 
+  background-color: #dd6a6a; 
+}
+
+/* Amarelo pastel */
+.btn-edit { 
+  background-color: #f6eac2; 
+  color: #7a6e4d; /* Texto marrom suave */
+}
+.btn-edit:hover { 
+  background-color: #f1dfa8; 
+}
+
+/* Cinza pastel */
+.btn-secondary { 
+  background-color: #e0e0e0; 
+  color: #666; 
+}
+.btn-secondary:hover { 
+  background-color: #d4d4d4; 
+}
